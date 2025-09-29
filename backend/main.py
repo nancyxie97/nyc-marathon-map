@@ -94,13 +94,13 @@ def post_nearest_subway_station(req: SubwayReq):
 async def get_spectator_by_mile(mile: int,supabase=Depends(get_supabase)):
 
     response = supabase.table("nycm_register_qa").select("id_register, mile, names, description, side").in_("mile", [mile]).execute()
-    print(response)
+
 
     return [SpectatorResp(**row) for row in response.data]
 
 @app.post("/register_spectator")
 async def post_spectator_by_mile(req: SpectatorReq,supabase=Depends(get_supabase)):
     response = supabase.table("nycm_register_qa").insert(req.dict()).execute()
-    send_to_self(req.names, req.mile, req)
-    print(response)
+    # send_to_self(req.names, req.mile, req)
+   
     return response

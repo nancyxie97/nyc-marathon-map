@@ -62,7 +62,6 @@ export function MileDialog({ mileDetails, setSelected }) {
     const postParticipants = async (e) => {
         e.preventDefault()
         const empty = Object.values(formData).includes("")
-        console.log(empty)
         if (!empty) {
             const address =
                 import.meta.env.VITE_ENDPOINT_ADDRESS.trim() + "/register_spectator"

@@ -29,6 +29,8 @@ register_spectator - add spectator info to the page
 ## Other Info 
 Database: Posgres on Supabase
 
-Sever: <TBD>
+Sever: Render
+
+Frontend Deployment: Vercel
 
 
